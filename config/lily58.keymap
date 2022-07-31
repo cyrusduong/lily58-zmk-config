@@ -47,9 +47,9 @@
 		lower_layer {
   		bindings = <
         &kp F1     &kp F2    &kp F3  &kp F4    &kp F5      &kp F6                  &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-        &kp GRAVE  &trans    &trans  &trans    &trans      &trans                  &trans     &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+        &kp GRAVE  &none     &none   &none     &none       &none                   &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
         &trans     &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT               &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &kp PIPE
-        &trans     &trans    &trans  &trans    &trans      &trans  &trans  &trans  &trans     &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans
+        &trans     &none     &none   &none     &none       &none   &none   &none   &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans 
                                      &trans    &trans      &trans  &trans  &trans  &trans     &trans     &trans
 			>;
 		};
@@ -62,10 +62,10 @@
     //                            |      |      |      |    ||    |        |       |       |
 		raise_layer {
 			bindings = <
-        &trans        &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5            &trans      &trans       &trans     &trans      &trans  &kp PRINTSCREEN
-        &out OUT_USB  &out OUT_BLE  &trans        &trans        &trans        &trans                  &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &trans  &kp C_PP
-        &trans        &trans        &trans        &trans        &trans        &trans                  &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &trans  &kp C_VOL_UP
-        &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &kp C_PREV  &kp K_CMENU  &trans     &kp C_NEXT  &trans  &kp C_VOL_DN  
+        &none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5            &none       &none        &none      &none       &none   &kp PRINTSCREEN
+        &out OUT_USB  &out OUT_BLE  &none         &none         &none         &none                   &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &none   &kp C_PP
+        &trans        &none         &none         &none         &none         &none                   &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &none   &kp C_VOL_UP
+        &trans        &none         &none         &none         &none         &none   &none   &none   &kp C_PREV  &kp K_CMENU  &none      &kp C_NEXT  &none   &kp C_VOL_DN  
                                                   &trans        &trans        &trans  &trans  &trans  &trans      &trans       &trans
       >;
 		};
