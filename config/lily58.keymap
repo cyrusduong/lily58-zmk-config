@@ -9,10 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-// To practice explicit layer - &none between layers instead of &transfer
-// Except modifier keys like alt, ctrl, shift for app hotkeys
-
 /*
+ * To practice explicit layer - &none between layers instead of &transfer
+ * Except modifier keys like alt, ctrl, shift for app hotkeys
+ * 
  * Future would be cool to have following
  * 1. Automatic plover activation based on grouping
  * 2. Automatic plover disable (maybe manual exit/pause would be better)
@@ -22,10 +22,10 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-// |  ESC  |  1  |  2  |  3   |  4   |  5   |                 |  6   |  7    |  8    |  9   |   0   |  DEL  |
-// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                 |  Y   |  U    |  I    |  O   |   P   |  BSPC |
-// |  CTRL |  A  |  S  |  D   |  F   |  G   |                 |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   [    ||  ]    |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+// |  ESC  |  1  |  2  |  3   |  4   |  5   |                 |  6    |  7   |  8    |  9   |   0   |  DEL  |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                 |  Y    |  U   |  I    |  O   |   P   |  BSPC |
+// |  CTRL |  A  |  S  |  D   |  F   |  G   |                 |  H    |  J   |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   [    ||  ]    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
 //                     | ALT  | GUI  | RET  | LOWER  || RAISE | SPACE | BSPC | MENU  |
 		default_layer {
 			bindings = <
@@ -39,17 +39,17 @@
 
 //  1 - Activated by left thumb - SYMBOLS AND F-KEYS
 // | F1 | F2 | F3 | F4 | F5 | F6 |        | F7 | F8 | F9 | F10 | F11 | F12 |
-// | `  |    |    |    |    |    |        |    | -  | =  | [   | ]   | \   |
-// |    | !  | @  | #  | $  | %  |        | ^  | &  | *  | (   | )   | "|" |
+// |    |    |    |    |    |    |        |    | -  | =  | [   | ]   | \   |
+// | `  | !  | @  | #  | $  | %  |        | ^  | &  | *  | (   | )   | "|" |
 // |    |    |    |    |    |    |   ||   |    | _  | +  | {   | }   |     |
-//                     |    |    |   ||   |    |
+//                |    |    |    |   ||   |    |    |    |
 		lower_layer {
 			bindings = <
-&kp F1     &kp F2    &kp F3  &kp F4    &kp F5    &kp F6               &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-&kp GRAVE  &none     &none   &none     &none     &none                &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKR  &kp BSLH
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT            &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &kp PIPE
-&none      &none     &none   &none     &none     &none  &none  &none  &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &none
-                             &none     &none     &none  &none  &none  &none      &none      &none
+&kp F1     &kp F2    &kp F3  &kp F4    &kp F5      &kp F6                  &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
+&kp GRAVE  &none     &none   &none     &none       &none                   &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKR  &kp BSLH
+&trans     &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT               &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &kp PIPE
+&trans     &none     &none   &none     &none       &none   &none   &none   &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans
+                             &trans    &trans      &trans  &trans  &trans  &trans     &trans     &trans
 			>;
 		};
 
@@ -61,12 +61,12 @@
 //                            |      |      |      |    ||    |        |       |       |
 		raise_layer {
 			bindings = <
-&none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL4  &bt BT_SEL 5         &none       &none        &none      &none       &none  &kp PRINTSCREEN
-&out OUT_USB  &out OUT_BLE  &none         &none         &none        &none                &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &none  &kp C_PP
-&none         &none         &none         &none         &none        &none                &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &none  &kp C_VOL_UP
-&none         &none         &none         &none         &none        &none  &none  &none  &kp C_PREV  &kp K_CMENU  &none      &kp C_NEXT  &none  &kp C_VOL_DN  
-                                          &none         &none        &none  &none  &none  &none       &none        &none
-			>;
+&none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5         &none       &none        &none      &none       &none  &kp PRINTSCREEN
+&out OUT_USB  &out OUT_BLE  &none         &none         &none         &none                &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &none  &kp C_PP
+&none         &none         &none         &none         &none         &none                &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &none  &kp C_VOL_UP
+&none         &none         &none         &none         &none         &none  &none  &none  &kp C_PREV  &kp K_CMENU  &none      &kp C_NEXT  &none  &kp C_VOL_DN  
+                                          &trans        &trans        &trans &trans &trans &trans      &trans       &trans
+      >;
 		};
 	};
 };
