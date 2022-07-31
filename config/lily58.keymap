@@ -46,8 +46,8 @@
 		raise_layer {
 			bindings = <
         &none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5            &none       &none        &none      &none       &none   &kp PRINTSCREEN
-        &out OUT_USB  &out OUT_BLE  &none         &none         &none         &none                   &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &none   &kp C_PP
-        &trans        &none         &none         &none         &none         &none                   &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &none   &kp C_VOL_UP
+        &trans        &none         &none         &none         &none         &none                   &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &none   &kp C_PP
+        &trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &none   &kp C_VOL_UP
         &trans        &none         &none         &none         &none         &none   &none   &none   &kp C_PREV  &kp K_CMENU  &none      &kp C_NEXT  &none   &kp C_VOL_DN  
                                                   &trans        &trans        &trans  &trans  &trans  &trans      &trans       &trans
       >;
