@@ -25,31 +25,31 @@
 
 		default_layer {
 			bindings = <
-        &kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                           &kp N6     &kp N7    &kp N8       &kp N9   &kp N0     &kp DEL
-        &kp TAB    &kp Q   &kp W  &kp E     &kp R     &kp T                            &kp Y      &kp U     &kp I        &kp O    &kp P      &kp BSPC
-        &kp LCTRL  &kp A   &kp S  &kp D     &kp F     &kp G                            &kp H      &kp J     &kp K        &kp L    &kp SEMI   &kp SQT
-        &kp LSHFT  &kp Z   &kp X  &kp C     &kp V     &kp B      &none      &none      &kp N      &kp M     &kp COMMA    &kp DOT  &kp FSLH   &kp RSHFT
-                                  &kp LGUI  &kp LALT  &kp SPACE  &lt 1 RET  &lt 2 RET  &kp SPACE  &kp BSPC  &kp K_CMENU
+&kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                           &kp N6     &kp N7    &kp N8       &kp N9   &kp N0     &none
+&kp TAB    &kp Q   &kp W  &kp F     &kp P     &kp B                            &kp J      &kp L     &kp U        &kp Y    &kp SEMI   &kp BSPC
+&kp LCTRL  &kp A   &kp R  &kp S     &kp T     &kp G                            &kp M      &kp N     &kp E        &kp I    &kp O      &kp SQT
+&kp LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp BSPC   &kp DEL    &kp K      &kp H     &kp COMMA    &kp DOT  &kp FSLH   &kp RSHFT
+                          &kp LGUI  &kp LALT  &kp RET    &mo 1      &mo 2      &kp SPACE  &kp DEL   &kp K_CMENU
 			>;
 		};
 
 		lower_layer {
-  		bindings = <
-        &kp F1     &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                  &kp F7  &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-        &kp GRAVE  &none   &none   &none   &none   &none                   &none   &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
-        &trans     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                  &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp PIPE
-        &trans     &none   &none   &none   &none   &none   &none   &none   &none   &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans 
-                                   &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL    &trans
+  		   bindings = <
+&kp F1     &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                  &kp F7  &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
+&kp GRAVE  &trans  &trans  &trans  &trans  &trans                  &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+&trans     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                  &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp PIPE
+&trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans 
+                           &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans
 			>;
 		};
-
+      
 		raise_layer {
 			bindings = <
-        &none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5            &none       &none        &none      &none       &none         &kp PRINTSCREEN
-        &kp GRAVE     &none         &none         &none         &none         &none                   &kp HOME    &kp PG_DN    &kp PG_UP  &kp END     &none         &kp C_PP
-        &trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT   &kp C_VOL_UP  &none
-        &trans        &none         &none         &none         &none         &none   &none   &none   &kp C_PREV  &kp K_CMENU  &none      &kp C_NEXT  &kp C_VOL_DN  &trans
-                                                  &trans        &trans        &trans  &trans  &trans  &trans      &trans       &trans
+&none         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5            &none        &none        &none      &none       &none         &trans
+&trans        &trans        &trans        &trans        &trans        &trans                  &kp HOME     &kp PG_DN    &kp PG_UP  &kp END     &kp C_PP      &trans
+&trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT   &kp C_VOL_UP  &trans
+&trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &kp C_PREV   &trans       &trans     &kp C_NEXT  &kp C_VOL_DN  &trans
+                                          &trans        &trans        &trans  &trans  &trans  &kp K_CMENU  &trans       &trans
       >;
 		};
 	};
