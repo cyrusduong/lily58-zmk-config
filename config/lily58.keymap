@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_BSPC";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             bindings = <&kp BSPC>, <&ctrl_bspc>;
         };
     };
