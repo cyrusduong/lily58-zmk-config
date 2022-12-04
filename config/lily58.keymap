@@ -20,6 +20,28 @@
  */
  
 / {
+	macros {
+        ctrl_bspc: ctrl_bspc {
+            label = "ctrl_bspc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BSPC>
+                , <&macro_release &kp LCTRL>
+				;
+        };
+    };
+
+	behaviors {
+        td_bpsc: tap_dance_bpsc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_BSPC";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp BSPC>, <&ctrl_bspc>;
+        };
+    };
+
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -29,7 +51,7 @@
 &kp TAB    &kp Q   &kp W  &kp F     &kp P     &kp B                            &kp J      &kp L        &kp U        &kp Y    &kp SEMI   &kp BSPC
 &kp LCTRL  &kp A   &kp R  &kp S     &kp T     &kp G                            &kp M      &kp N        &kp E        &kp I    &kp O      &kp SQT
 &kp LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp RET    &kp RET    &kp K      &kp H        &kp COMMA    &kp DOT  &kp FSLH   &kp RSHFT
-                          &kp LGUI  &kp LALT  &kp SPACE  &mo 1      &mo 2      &kp SPACE  &kp K_CMENU  &kp RALT
+                          &kp LGUI  &kp LALT  &td_bpsc   &mo 1      &mo 2      &kp SPACE  &kp K_CMENU  &kp RALT
 			>;
 		};
 
