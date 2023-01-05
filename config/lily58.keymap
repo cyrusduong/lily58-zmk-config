@@ -18,6 +18,13 @@
  * 1. Automatic plover activation based on grouping
  * 2. Automatic plover disable (maybe manual exit/pause would be better)
  */
+
+&sk {
+    release-after-ms = <100>;
+    quick-release;
+    ignore-modifiers;
+};
+
 / {
     behaviors {
         qlt: quick-layer-tap {
@@ -39,7 +46,7 @@
 &kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                       &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
 &kp TAB    &kp Q   &kp W  &kp F     &kp P     &kp B                        &kp J      &kp L        &kp U        &kp Y    &kp SEMI   &kp BSPC
 &kp LCTRL  &kp A   &kp R  &kp S     &kp T     &kp G                        &kp M      &kp N        &kp E        &kp I    &kp O      &kp SQT
-&kp LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp RET  &kp RET  &kp K      &kp H        &kp COMMA    &kp DOT  &kp FSLH   &kp RSHFT
+&sk LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp RET  &kp RET  &kp K      &kp H        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
                           &kp LGUI  &kp LALT  &kp SPACE  &mo 1    &mo 2    &kp SPACE  &kp K_CMENU  &kp RALT
 			>;
 		};
@@ -49,7 +56,7 @@
 &trans     &kp F1   &kp F2   &kp F3   &kp F4     &kp F5                    &kp F6  &kp F7     &kp F8     &kp F9    &kp F10   &trans
 &kp GRAVE  &kp F11  &kp F12  &kp INS  &kp PSCRN  &trans                    &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
 &trans     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                    &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp PIPE
-&trans     &trans   &trans   &trans   &trans     &trans  &trans   &trans   &trans  &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans
+&trans     &kp N6   &kp N7   &kp N8   &kp N9     &kp N0  &trans   &trans   &trans  &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans
                              &trans   &trans     &trans  &none    &kp RET  &trans  &trans     &trans
 			>;
 		};
