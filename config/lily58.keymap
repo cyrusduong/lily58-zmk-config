@@ -1,7 +1,7 @@
 #define NORM    0
-#define SPEC    1
-#define NAV     2
-#define QWERTY  3
+#define QWERTY  1
+#define SPEC    2
+#define NAV     3
 
 /*
  * Copyright (c) 2020 The ZMK Contributors
@@ -56,6 +56,16 @@
 			>;
 		};
 
+    qwerty_layer {
+			bindings = <
+&kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                        &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
+&kp TAB    &kp Q   &kp W  &kp E     &kp R     &kp T                         &kp Y      &kp U        &kp I        &kp O    &kp P      &kp BSPC
+&kp LCTRL  &kp A   &kp S  &kp D     &kp F     &kp G                         &kp H      &kp J        &kp K        &kp L    &kp SEMI   &kp SQT
+&sk LSHFT  &kp Z   &kp X  &kp C     &kp V     &kp B      &kp RET   &kp RET  &kp N      &kp M        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
+                          &kp LGUI  &kp LALT  &kp SPACE  &mo SPEC  &mo NAV  &kp SPACE  &tog QWERTY  &kp RALT
+			>;
+		};
+
 		lower_layer {
   		   bindings = <
 &trans     &kp F1   &kp F2   &kp F3   &kp F4     &kp F5                     &kp F6  &kp F7     &kp F8     &kp F9    &kp F10   &trans
@@ -74,16 +84,6 @@
 &trans  &kp N6   &kp N7   &kp N8  &kp N9  &kp N0  &trans    &trans  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &trans
                           &trans  &trans  &trans  &kp LGUI  &none   &trans      &trans        &trans
       >;
-		};
-		
-    qwerty_layer {
-			bindings = <
-&kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                        &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
-&kp TAB    &kp Q   &kp W  &kp E     &kp R     &kp T                         &kp Y      &kp U        &kp I        &kp O    &kp P      &kp BSPC
-&kp LCTRL  &kp A   &kp S  &kp D     &kp F     &kp G                         &kp H      &kp J        &kp K        &kp L    &kp SEMI   &kp SQT
-&sk LSHFT  &kp Z   &kp X  &kp C     &kp V     &kp B      &kp RET   &kp RET  &kp N      &kp M        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
-                          &kp LGUI  &kp LALT  &kp SPACE  &mo SPEC  &mo NAV  &kp SPACE  &tog QWERTY  &kp RALT
-			>;
 		};
 	};
 };
