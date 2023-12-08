@@ -1,2 +1,3 @@
 rm *.uf2
-gh run watch && gh run download -n firmware
+gh run watch
+gh run download -n firmware
