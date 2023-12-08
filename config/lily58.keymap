@@ -17,18 +17,19 @@
 // #include <dt-bindings/zmk/ext_power.h>
 
 /*
- * To practice explicit layer - &none between layers instead of &transfer
- * Except modifier keys like alt, ctrl, shift for app hotkeys
- * 
- * Future would be cool to have following
+ * TODO: would be cool to have following
  * 1. Automatic plover activation based on grouping
  * 2. Automatic plover disable (maybe manual exit/pause would be better)
  */
 
 &sk {
-    release-after-ms = <100>;
+    release-after-ms = <150>;
     quick-release;
     ignore-modifiers;
+};
+
+&mt {
+    tapping-term-ms = <150>;
 };
 
 / {
@@ -45,45 +46,45 @@
     };
 
 	keymap {
-		compatible = "zmk,keymap";
+    compatible = "zmk,keymap";
 
 		default_layer {
 			bindings = <
-&kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                        &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
-&kp TAB    &kp Q   &kp W  &kp F     &kp P     &kp B                         &kp J      &kp L        &kp U        &kp Y    &kp SEMI   &kp BSPC
-&kp LCTRL  &kp A   &kp R  &kp S     &kp T     &kp G                         &kp M      &kp N        &kp E        &kp I    &kp O      &kp SQT
-&sk LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp RET   &kp RET  &kp K      &kp H        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
-                          &kp LGUI  &kp LALT  &kp SPACE  &mo SPEC  &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
+        &kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                             &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
+        &kp TAB    &kp Q   &kp W  &kp F     &kp P     &kp B                              &kp J      &kp L        &kp U        &kp Y    &kp SEMI   &kp BSPC
+        &kp LCTRL  &kp A   &kp R  &kp S     &kp T     &kp G                              &kp M      &kp N        &kp E        &kp I    &kp O      &kp SQT
+        &sk LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp RET        &kp RET  &kp K      &kp H        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
+                                  &kp LGUI  &kp LALT  &kp SPACE  &mo SPEC       &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
 			>;
 		};
 
     qwerty_layer {
 			bindings = <
-&kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                        &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
-&kp TAB    &kp Q   &kp W  &kp E     &kp R     &kp T                         &kp Y      &kp U        &kp I        &kp O    &kp P      &kp BSPC
-&kp LCTRL  &kp A   &kp S  &kp D     &kp F     &kp G                         &kp H      &kp J        &kp K        &kp L    &kp SEMI   &kp SQT
-&sk LSHFT  &kp Z   &kp X  &kp C     &kp V     &kp B      &kp RET   &kp RET  &kp N      &kp M        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
-                          &kp LGUI  &kp LALT  &kp SPACE  &mo SPEC  &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
+        &kp ESC    &kp N1  &kp N2 &kp N3    &kp N4    &kp N5                             &kp N6     &kp N7       &kp N8       &kp N9   &kp N0     &kp DEL
+        &kp TAB    &kp Q   &kp W  &kp E     &kp R     &kp T                              &kp Y      &kp U        &kp I        &kp O    &kp P      &kp BSPC
+        &kp LCTRL  &kp A   &kp S  &kp D     &kp F     &kp G                              &kp H      &kp J        &kp K        &kp L    &kp SEMI   &kp SQT
+        &sk LSHFT  &kp Z   &kp X  &kp C     &kp V     &kp B      &kp RET        &kp RET  &kp N      &kp M        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
+                                  &kp LGUI  &kp LALT  &kp SPACE  &mo SPEC       &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
 			>;
 		};
 
-		lower_layer {
-  		   bindings = <
-&trans     &kp F1   &kp F2   &kp F3   &kp F4     &kp F5                     &kp F6  &kp F7     &kp F8     &kp F9    &kp F10   &out OUT_TOG
-&kp GRAVE  &kp F11  &kp F12  &kp INS  &kp PSCRN  &kp BSPC                   &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &trans
-&trans     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                     &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSLH
-&trans     &kp N6   &kp N7   &kp N8   &kp N9     &kp N0  &kp DEL  &trans    &trans  &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans
-                             &trans   &trans     &trans  &none    &kp LGUI  &trans  &trans     &trans
+		special_layer {
+      bindings = <
+        &trans     &kp F1   &kp F2   &kp F3   &kp F4     &kp F5                           &kp F6  &kp F7     &kp F8     &kp F9    &kp F10   &out OUT_TOG
+        &kp GRAVE  &kp F11  &kp F12  &kp INS  &kp PSCRN  &kp BSPC                         &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &trans
+        &trans     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                           &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSLH
+        &trans     &kp N6   &kp N7   &kp N8   &kp N9     &kp N0  &kp DEL        &trans    &trans  &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &trans
+                                     &trans   &trans     &trans  &none          &kp LGUI  &trans  &trans     &trans
 			>;
 		};
       
-		raise_layer {
+		nav_layer {
 			bindings = <
-&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                    &kp F6      &kp F7        &kp F8        &kp F9      &kp F10    &tog QWERTY
-&trans  &kp F11  &kp F12  &trans  &trans  &trans                    &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &bt BT_CLR &trans
-&trans  &kp N1   &kp N2   &kp N3  &kp N4  &kp N5                    &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp SEMI   &trans
-&trans  &kp N6   &kp N7   &kp N8  &kp N9  &kp N0  &trans    &trans  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &trans
-                          &trans  &trans  &trans  &kp LGUI  &none   &trans      &trans        &trans
+        &trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                &kp F6      &kp F7        &kp F8        &kp F9      &kp F10    &tog QWERTY
+        &trans  &kp F11  &kp F12  &trans  &trans  &trans                                &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &bt BT_CLR &trans
+        &trans  &kp N1   &kp N2   &kp N3  &kp N4  &kp N5                                &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp SEMI   &trans
+        &trans  &kp N6   &kp N7   &kp N8  &kp N9  &kp N0  &trans                &trans  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &trans
+                                  &trans  &trans  &trans  &kp LGUI              &none   &trans      &trans        &trans
       >;
 		};
 	};
