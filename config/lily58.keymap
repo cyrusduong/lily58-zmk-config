@@ -49,8 +49,9 @@
             label = "HOLD_LAYER_TAP_REPEAT";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <100>;
+            # retro-tap = true;
+            # quick-tap-ms = <150>;
             bindings = <&mo>, <&key_repeat>;
         };
     };
@@ -64,7 +65,7 @@
         &kp TAB    &kp Q   &kp W  &kp F     &kp P     &kp B                              &kp J      &kp L        &kp U        &kp Y    &kp SEMI   &kp BSPC
         &kp LCTRL  &kp A   &kp R  &kp S     &kp T     &kp G                              &kp M      &kp N        &kp E        &kp I    &kp O      &kp SQT
         &sk LSHFT  &kp Z   &kp X  &kp C     &kp D     &kp V      &kp RET        &kp RET  &kp K      &kp H        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
-                                  &kp LGUI  &kp LALT  &kp SPACE  &hltr SPEC     &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
+                                  &kp LGUI  &kp LALT  &kp SPACE  &hltr SPEC 0   &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
 			>;
 		};
 
@@ -74,7 +75,7 @@
         &kp TAB    &kp Q   &kp W  &kp E     &kp R     &kp T                              &kp Y      &kp U        &kp I        &kp O    &kp P      &kp BSPC
         &kp LCTRL  &kp A   &kp S  &kp D     &kp F     &kp G                              &kp H      &kp J        &kp K        &kp L    &kp SEMI   &kp SQT
         &sk LSHFT  &kp Z   &kp X  &kp C     &kp V     &kp B      &kp RET        &kp RET  &kp N      &kp M        &kp COMMA    &kp DOT  &kp FSLH   &sk RSHFT
-                                  &kp LGUI  &kp LALT  &kp SPACE  &hltr SPEC     &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
+                                  &kp LGUI  &kp LALT  &kp SPACE  &hltr SPEC 0   &mo NAV  &kp SPACE  &kp K_CMENU  &kp RALT
 			>;
 		};
 
