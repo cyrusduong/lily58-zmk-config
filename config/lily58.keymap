@@ -40,7 +40,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             require-prior-idle-ms = <150>;
-            retro-tap = <true>;
             bindings = <&mo>, <&key_repeat>;
         };
     };
