@@ -34,24 +34,11 @@
 
 / {
     behaviors {
-        qlt: quick_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "QUICK_LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <0>;
-            bindings = <&mo>, <&kp>;
-        };
-
         hltr: hold_layer_tap_repeat {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_LAYER_TAP_REPEAT";
-            #binding-cells = <2>;
+            binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <100>;
-            # retro-tap = true;
-            # quick-tap-ms = <150>;
             bindings = <&mo>, <&key_repeat>;
         };
     };
