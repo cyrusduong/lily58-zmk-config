@@ -36,7 +36,8 @@
     behaviors {
         hltr: hold_layer_tap_repeat {
             compatible = "zmk,behavior-hold-tap";
-            binding-cells = <2>;
+            label = "HOLD_LAYER_TAP_REPEAT";
+            # binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <100>;
             bindings = <&mo>, <&key_repeat>;
