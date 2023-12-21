@@ -3,12 +3,13 @@
 # Escilate this script if it is not sudo
 if [ $EUID != 0 ]; then
 	sudo "$0" "$@"
-	exit $?
+	return $?
 fi
 
 # Define the source files
-LEFT_FILE="left.uf2"
-RIGHT_FILE="right.uf2"
+BASEDIR=$(dirname "$0")
+LEFT_FILE="$BASEDIR/left.uf2"
+RIGHT_FILE="$BASEDIR/right.uf2"
 
 # Define the destination directory on the USB device
 DESTINATION="/mnt/nano" # Change this to the appropriate mount point of your USB device
@@ -67,5 +68,4 @@ check_and_copy "$LEFT_FILE" "Please connect the left keyboard in device mode"
 
 # Wait for the right keyboard
 check_and_copy "$RIGHT_FILE" "Please connect the right keyboard in device mode"
-
 echo "Done!"
